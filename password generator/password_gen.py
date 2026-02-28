@@ -9,12 +9,11 @@ def main():
     while True: 
         try:
             num_characters = int(input("Number of characters (between 5 and 128): "))
-            
             if 5 <= num_characters <= 128:
                 break 
             else:
                 print("Invalid! Use between 5 and 128 characters.")
-                
+        
         except ValueError:
             print("Invalid! Enter a number only.")
     
