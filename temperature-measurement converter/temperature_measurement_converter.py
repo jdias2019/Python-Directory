@@ -62,3 +62,23 @@ if choice_mode == "1" and choice_temp is not None:
     temp(choice_temp)
 elif choice_mode == "2" and choice_measure is not None:
     measure(choice_measure)
+
+
+
+def convert_again():
+    again = input("Convert again? (y/n): ")
+
+    for option in again:
+        if option == "y":
+            mode()
+        elif option == "n":
+            break
+        else:
+            print("Invalid Option")
+            convert_again()
+
+convert_again()
+
+
+
+
