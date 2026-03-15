@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+Test/
 
 # Virtual environments
 venv/
