@@ -1,14 +1,11 @@
 import customtkinter
 
-
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("green")
 
 gui = customtkinter.CTk()
 gui.title("Counter App")
 gui.geometry("1000x600")
-
-
 
 count = 0
 counter_label = customtkinter.CTkLabel(gui, text=str(count), font=customtkinter.CTkFont(size=90))
@@ -29,7 +26,6 @@ def reset():
     count = 0
     counter_label.configure(text=str(count))
 
-
 frame_butons = customtkinter.CTkFrame(gui, fg_color="transparent")
 frame_butons.pack(pady=50)
 
@@ -40,6 +36,5 @@ reset_button = customtkinter.CTkButton(frame_butons, text="Reset", command=reset
 plus_button.pack(side="left",  padx=40)
 minus_button.pack(side="left", padx=40)
 reset_button.pack(side="left", padx=40)
-
 
 gui.mainloop()
