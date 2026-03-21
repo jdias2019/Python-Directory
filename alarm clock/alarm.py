@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
 from PyQt5.QtGui import QIcon, QFont
 from PyQt5.QtCore import Qt, QTimer, QTime
 
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -60,19 +59,28 @@ class MainWindow(QMainWindow):
         self.timer_button.setStyleSheet(button_style)
         self.timer_button.clicked.connect(self.on_timer)
 
+        #clock button
+        self.clock_button = QPushButton("🕰️  Clock", self)
+        self.clock_button.setFont(QFont("Calibri", 16))
+        self.clock_button.setGeometry(425, 500, 250, 55)
+        self.clock_button.setStyleSheet(button_style)
+        self.clock_button.clicked.connect(self.on_clock)
+
     def update_time(self):
         current_time = QTime.currentTime()
         self.time_label.setText(current_time.toString("hh:mm:ss"))
 
     def on_set_alarm(self):
-        print("set alarm clicked")
+        self.time_label.setGeometry(170, 10, 750, 150)
 
     def on_stopwatch(self):
-        print("stopwatch clicked")
+        self.time_label.setGeometry(0, 0, 0, 0)
 
     def on_timer(self):
-        print("timer clicked")
+        self.time_label.setGeometry(0, 0, 0, 0)
 
+    def on_clock(self):
+        self.time_label.setGeometry(200, 200, 700, 150)
 
 def main():
     app = QApplication(sys.argv)
